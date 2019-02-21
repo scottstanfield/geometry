@@ -20,6 +20,7 @@ and functionality.
 - [Function `geometry_rustup`](#Function-geometryrustup)
 - [Function `geometry_status`](#Function-geometrystatus)
 - [Function `geometry_virtualenv`](#Function-geometryvirtualenv)
+
 <br><br>
 
 ### Function `geometry_docker_machine`
@@ -30,6 +31,7 @@ Show the docker machine name.
 | -------------------------------- | ------------------------------- | -------- |
 | `GEOMETRY_DOCKER_MACHINE_SYMBOL` | Indicator.                      | `⚓`      |
 | `GEOMETRY_DOCKER_MACHINE_COLOR`  | Text color of the machine name. | `blue`   |
+
 <br><br>
 
 ### Function `geometry_exec_time`
@@ -77,6 +79,7 @@ Show git related information, such as branch name, status and time since last co
 | `GEOMETRY_GIT_SYMBOL_BARE`               | Indicator.                                  | `⬢`                  |
 | **geometry::git_wrapper**                |                                             |                      |
 | `GEOMETRY_GIT_SEPARATOR`                 | Separator for the indicators.               | `::`                 |
+
 <br><br>
 
 ### Function `geometry_hg`
@@ -91,6 +94,7 @@ Show Mercurial related information, such as branch name, status and time since l
 | `GEOMETRY_HG_COLOR_CLEAN`      | Color for clean indicator.      | `green`  |
 | `GEOMETRY_HG_SYMBOL_CLEAN`     | Idicator for clean repository.  | `⬢`      |
 | `GEOMETRY_HG_SYMBOL_SEPARATOR` | Separator for the indicators.   | `::`     |
+
 <br><br>
 
 ### Function `geometry_hostname`
@@ -101,6 +105,7 @@ Shows user and hostname information, by default in the `enter` prompt.
 | ----------------------------- | ------------------------------------------------------------------------- | ----------- |
 | `GEOMETRY_HOSTNAME_HIDE_ON`   | Don't show the username and hostname indicator when the hostname matches. | `localhost` |
 | `GEOMETRY_HOSTNAME_SEPARATOR` | Separator between user and hostname.                                      | `@`         |
+
 <br><br>
 
 ### Function `geometry_jobs`
@@ -111,6 +116,7 @@ Shows background jobs, by default in the `enter` prompt.
 | ---------------------- | ------------------------ | -------- |
 | `GEOMETRY_JOBS_SYMBOL` | Indicator.               | `⚙`      |
 | `GEOMETRY_JOBS_COLOR`  | Color for the indicator. | `blue`   |
+
 <br><br>
 
 ### Function `geometry_kube`
@@ -122,6 +128,7 @@ Show kubectl (Kubernetes) client version and current context/namespace.
 | `GEOMETRY_KUBE_COLOR`  | Color for the indicator.                   | `blue`   |
 | `GEOMETRY_KUBE_SYMBOL` | Indicator.                                 | `⎈`      |
 | `GEOMETRY_KUBE_PIN`    | Can be set to always show `geometry_kube`. |          |
+
 <br><br>
 
 ### Function `geometry_node`
@@ -133,6 +140,7 @@ Show node and npm/yarn version when in a node project context.
 | `GEOMETRY_NODE_SYMBOL` | Indicator.                                                                                   | `⬡`      |
 | `GEOMETRY_NODE_COLOR`  | Color for the indicator.                                                                     | `green`  |
 | `GEOMETRY_NODE_PIN`    | Can be setup to always show `geometry_node` outside of the context of a node project folder. |          |
+
 <br><br>
 
 ### Function `geometry_npm_package_version`
@@ -203,6 +211,7 @@ Show a symbol with error/success and root/non-root information.
 | `GEOMETRY_STATUS_COLOR`             | Indicator color.                                       | `white`  |
 | `GEOMETRY_STATUS_COLOR_ERROR`       | Indicator color on error.                              | `red`    |
 | `GEOMETRY_STATUS_SYMBOL_COLOR_HASH` | Automatically pick a color based on the hostname hash. | `false`  |
+
 <br><br>
 
 ### Function `geometry_virtualenv`
