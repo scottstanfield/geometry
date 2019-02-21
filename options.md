@@ -4,34 +4,24 @@ Configuring Geometry is just a matter of setting some variables. Below, you'll f
 list of all possible options that you can set that will override Geometry appearance
 and functionality.
 
-## Table of Contents
-- [geometry_docker_machine.zsh](#geometrydockermachinezsh)
-- [geometry_exec_time.zsh](#geometryexectimezsh)
-- [geometry_git.zsh](#geometrygitzsh)
-  - [`geometry_git_stashes()`](#geometrygitstashes)
-  - [`geometry_git_time()`](#geometrygittime)
-  - [`geometry_git_branch()`](#geometrygitbranch)
-  - [`geometry_git_status()`](#geometrygitstatus)
-  - [`geometry_git_rebase()`](#geometrygitrebase)
-  - [`geometry_git_remote() `](#geometrygitremote)
-  - [`geometry_git_conflicts()`](#geometrygitconflicts)
-  - [`geometry_git()`](#geometrygit)
-  - [`geometry::git_wrapper`](#geometrygitwrapper)
-- [geometry_hg.zsh](#geometryhgzsh)
-- [geometry_hostname.zsh](#geometryhostnamezsh)
-- [geometry_jobs.zsh](#geometryjobszsh)
-- [geometry_kube.zsh](#geometrykubezsh)
-- [geometry_node.zsh](#geometrynodezsh)
-- [geometry_npm_package_version.zsh](#geometrynpmpackageversionzsh)
-- [geometry_path.zsh](#geometrypathzsh)
-- [geometry_ruby.zsh](#geometryrubyzsh)
-- [geometry_rust_version.zsh](#geometryrustversionzsh)
-- [geometry_rustup.zsh](#geometryrustupzsh)
-- [geometry_status.zsh](#geometrystatuszsh)
-- [geometry_virtualenv.zsh](#geometryvirtualenvzsh)
+# Table of Contents
+- [function `geometry_docker_machine`](#function-geometrydockermachine)
+- [function `geometry_exec_time`](#function-geometryexectime)
+- [function `geometry_git`](#function-geometrygit)
+- [function `geometry_hg`](#function-geometryhg)
+- [function `geometry_hostname`](#function-geometryhostname)
+- [function `geometry_jobs`](#function-geometryjobs)
+- [function `geometry_kube`](#function-geometrykube)
+- [function `geometry_node`](#function-geometrynode)
+- [function `geometry_npm_package_version`](#function-geometrynpmpackageversion)
+- [function `geometry_path`](#function-geometrypath)
+- [function `geometry_ruby`](#function-geometryruby)
+- [function `geometry_rust_version`](#function-geometryrustversion)
+- [function `geometry_rustup`](#function-geometryrustup)
+- [function `geometry_status`](#function-geometrystatus)
+- [function `geometry_virtualenv`](#function-geometryvirtualenv)
 
-
-## geometry_docker_machine.zsh
+### function `geometry_docker_machine`
 
 Show the docker machine name.
 
@@ -40,7 +30,7 @@ Show the docker machine name.
 | `GEOMETRY_DOCKER_MACHINE_SYMBOL` | Indicator.                      | `⚓`      |
 | `GEOMETRY_DOCKER_MACHINE_COLOR`  | Text color of the machine name. | `blue`   |
 
-## geometry_exec_time.zsh
+### function `geometry_exec_time`
 
 Show the elapsed time for long running commands.
 
@@ -49,79 +39,44 @@ Show the elapsed time for long running commands.
 | `GEOMETRY_EXEC_TIME_FILE`     | Path to temp direcotry, where file is stored. |          |
 | `GEOMETRY_EXEC_TIME_PATIENCE` | Seconds before the time is shown.             |          |
 
-## geometry_git.zsh
+### function `geometry_git`
 
 Show git related information, such as branch name, status and time since last commit.
 
-| Variable            | Description                     | Defaults             |
-| ------------------- | ------------------------------- | -------------------- |
-| `GEOMETRY_GIT_GREP` | Used to override our searching. | `rg` > `ag` > `grep` |
+| Variable                                 | Description                                 | Defaults             |
+| ---------------------------------------- | ------------------------------------------- | -------------------- |
+| `GEOMETRY_GIT_GREP`                      | Used to override our searching.             | `rg` > `ag` > `grep` |
+| **geometry_git_stashes()**               |                                             |                      |
+| `GEOMETRY_GIT_SYMBOL_STASHES`            | Indicator.                                  | `●`                  |
+| `GEOMETRY_GIT_COLOR_STASHES`             | Color.                                      | `144`                |
+| **geometry_git_time()**                  |                                             |                      |
+| `GEOMETRY_COLOR_NO_TIME`                 | Text color.                                 | `white`              |
+| `GEOMETRY_GIT_NO_COMMITS_MESSAGE`        | Text message shown when there's no commits. | `no-commits`         |
+| `GEOMETRY_GIT_TIME_DETAILED`             | Detailed timestamp instead of simple.       | `false`              |
+| **geometry_git_branch()**                |                                             |                      |
+| `GEOMETRY_GIT_COLOR_BRANCH`              | Color for branch name.                      | `242`                |
+| **geometry_git_status()**                |                                             |                      |
+| `GEOMETRY_GIT_COLOR_DIRTY`               | Color for dirty indicator.                  | `red`                |
+| `GEOMETRY_GIT_SYMBOL_DIRTY`              | Indicator when dirty.                       | `⬡`                  |
+| `GEOMETRY_GIT_COLOR_CLEAN`               | Color for clean indicator.                  | `green`              |
+| `GEOMETRY_GIT_SYMBOL_CLEAN`              | Indicator when clean.                       | `⬢`                  |
+| **geometry_git_rebase()**                |                                             |                      |
+| `GEOMETRY_GIT_SYMBOL_REBASE`             | Indicator.                                  | `®`                  |
+| **geometry_git_remote() **               |                                             |                      |
+| `GEOMETRY_GIT_SYMBOL_UNPUSHED`           | Unpushed indicator.                         | `⇡`                  |
+| `GEOMETRY_GIT_SYMBOL_UNPULLED`           | Unpulled indicator.                         | `⇣`                  |
+| **geometry_git_conflicts()**             |                                             |                      |
+| `GEOMETRY_GIT_COLOR_CONFLICTS_UNSOLVED`  | Unsolved conflicts color.                   | `red`                |
+| `GEOMETRY_GIT_COLOR_CONFLICTS_SOLVED`    | Solved conflicts color.                     | `green`              |
+| `GEOMETRY_GIT_SYMBOL_CONFLICTS_SOLVED`   | Solved conflicts indicator.                 | `◆`                  |
+| `GEOMETRY_GIT_SYMBOL_CONFLICTS_UNSOLVED` | Unsolved conflicts indicator.               | `◈`                  |
+| **geometry_git()**                       |                                             |                      |
+| `GEOMETRY_GIT_COLOR_BARE`                | Color.                                      | `blue`               |
+| `GEOMETRY_GIT_SYMBOL_BARE`               | Indicator.                                  | `⬢`                  |
+| **geometry::git_wrapper**                |                                             |                      |
+| `GEOMETRY_GIT_SEPARATOR`                 | Separator for the indicators.               | `::`                 |
 
-##### `geometry_git_stashes()`
-
-| Variable                      | Description | Defaults |
-| ----------------------------- | ----------- | -------- |
-| `GEOMETRY_GIT_SYMBOL_STASHES` | Indicator.  | `●`      |
-| `GEOMETRY_GIT_COLOR_STASHES`  | Color.      | `144`    |
-
-##### `geometry_git_time()`
-| Variable                          | Description                                 | Defaults     |
-| --------------------------------- | ------------------------------------------- | ------------ |
-| `GEOMETRY_COLOR_NO_TIME`          | Text color.                                 | `white`      |
-| `GEOMETRY_GIT_NO_COMMITS_MESSAGE` | Text message shown when there's no commits. | `no-commits` |
-| `GEOMETRY_GIT_TIME_DETAILED`      | Detailed timestamp instead of simple.       | `false`      |
-
-##### `geometry_git_branch()`
-
-| Variable                    | Description            | Defaults |
-| --------------------------- | ---------------------- | -------- |
-| `GEOMETRY_GIT_COLOR_BRANCH` | Color for branch name. | `242`    |
-
-##### `geometry_git_status()`
-
-| Variable                    | Description                | Defaults |
-| --------------------------- | -------------------------- | -------- |
-| `GEOMETRY_GIT_COLOR_DIRTY`  | Color for dirty indicator. | `red`    |
-| `GEOMETRY_GIT_SYMBOL_DIRTY` | Indicator when dirty.      | `⬡`      |
-| `GEOMETRY_GIT_COLOR_CLEAN`  | Color for clean indicator. | `green`  |
-| `GEOMETRY_GIT_SYMBOL_CLEAN` | Indicator when clean.      | `⬢`      |
-
-##### `geometry_git_rebase()`
-
-| Variable                     | Description | Defaults |
-| ---------------------------- | ----------- | -------- |
-| `GEOMETRY_GIT_SYMBOL_REBASE` | Indicator.  | `®`      |
-
-##### `geometry_git_remote() `
-
-| Variable                       | Description         | Defaults |
-| ------------------------------ | ------------------- | -------- |
-| `GEOMETRY_GIT_SYMBOL_UNPUSHED` | Unpushed indicator. | `⇡`      |
-| `GEOMETRY_GIT_SYMBOL_UNPULLED` | Unpulled indicator. | `⇣`      |
-
-##### `geometry_git_conflicts()`
-
-| Variable                                 | Description                   | Defaults |
-| ---------------------------------------- | ----------------------------- | -------- |
-| `GEOMETRY_GIT_COLOR_CONFLICTS_UNSOLVED`  | Unsolved conflicts color.     | `red`    |
-| `GEOMETRY_GIT_COLOR_CONFLICTS_SOLVED`    | Solved conflicts color.       | `green`  |
-| `GEOMETRY_GIT_SYMBOL_CONFLICTS_SOLVED`   | Solved conflicts indicator.   | `◆`      |
-| `GEOMETRY_GIT_SYMBOL_CONFLICTS_UNSOLVED` | Unsolved conflicts indicator. | `◈`      |
-
-##### `geometry_git()`
-
-| Variable                   | Description | Defaults |
-| -------------------------- | ----------- | -------- |
-| `GEOMETRY_GIT_COLOR_BARE`  | Color.      | `blue`   |
-| `GEOMETRY_GIT_SYMBOL_BARE` | Indicator.  | `⬢`      |
-
-##### `geometry::git_wrapper`
-
-| Variable                 | Description                   | Defaults |
-| ------------------------ | ----------------------------- | -------- |
-| `GEOMETRY_GIT_SEPARATOR` | Separator for the indicators. | `::`     |
-
-## geometry_hg.zsh
+### function `geometry_hg`
 
 Show Mercurial related information, such as branch name, status and time since last commit.
 
@@ -134,7 +89,7 @@ Show Mercurial related information, such as branch name, status and time since l
 | `GEOMETRY_HG_SYMBOL_CLEAN`     | Idicator for clean repository.  | `⬢`      |
 | `GEOMETRY_HG_SYMBOL_SEPARATOR` | Separator for the indicators.   | `::`     |
 
-## geometry_hostname.zsh
+### function `geometry_hostname`
 
 Shows user and hostname information, by default in the `enter` prompt.
 
@@ -143,7 +98,7 @@ Shows user and hostname information, by default in the `enter` prompt.
 | `GEOMETRY_HOSTNAME_HIDE_ON`   | Don't show the username and hostname indicator when the hostname matches. | `localhost` |
 | `GEOMETRY_HOSTNAME_SEPARATOR` | Separator between user and hostname.                                      | `@`         |
 
-## geometry_jobs.zsh
+### function `geometry_jobs`
 
 Shows background jobs, by default in the `enter` prompt.
 
@@ -152,7 +107,7 @@ Shows background jobs, by default in the `enter` prompt.
 | `GEOMETRY_JOBS_SYMBOL` | Indicator.               | `⚙`      |
 | `GEOMETRY_JOBS_COLOR`  | Color for the indicator. | `blue`   |
 
-## geometry_kube.zsh
+### function `geometry_kube`
 
 Show kubectl (Kubernetes) client version and current context/namespace.
 
@@ -162,7 +117,7 @@ Show kubectl (Kubernetes) client version and current context/namespace.
 | `GEOMETRY_KUBE_SYMBOL` | Indicator.                                 | `⎈`      |
 | `GEOMETRY_KUBE_PIN`    | Can be set to always show `geometry_kube`. |          |
 
-## geometry_node.zsh
+### function `geometry_node`
 
 Show node and npm/yarn version when in a node project context.
 
@@ -172,7 +127,7 @@ Show node and npm/yarn version when in a node project context.
 | `GEOMETRY_NODE_COLOR`  | Color for the indicator.                                                                     | `green`  |
 | `GEOMETRY_NODE_PIN`    | Can be setup to always show `geometry_node` outside of the context of a node project folder. |          |
 
-## geometry_npm_package_version.zsh
+### function `geometry_npm_package_version`
 
 Display the current folder's npm package version from package.json (by @drager)
 
@@ -182,7 +137,7 @@ Display the current folder's npm package version from package.json (by @drager)
 | `GEOMETRY_NPM_PACKAGE_VERSION_SYMBOL_COLOR` | Color for the indicator. | `red`    |
 | `GEOMETRY_NPM_PACKAGE_VERSION_COLOR`        | Text color.              | `red`    |
 
-## geometry_path.zsh
+### function `geometry_path`
 
 Show the current path.
 
@@ -192,7 +147,7 @@ Show the current path.
 | `GEOMETRY_PATH_SHOW_BASENAME` | -                                       | `false`  |
 | `GEOMETRY_PATH_COLOR`         | Color for path.                         | `blue`   |
 
-## geometry_ruby.zsh
+### function `geometry_ruby`
 
 Display the current ruby version, rvm version, and gemset.
 
@@ -202,7 +157,7 @@ Display the current ruby version, rvm version, and gemset.
 | `GEOMETRY_RUBY_COLOR`           | Indicator color. | `white`  |
 | `GEOMETRY_RUBY_RVM_SHOW_GEMSET` | Show RVM gemset. | `true`   |
 
-## geometry_rust_version.zsh
+### function `geometry_rust_version`
 
 Display the current version of rust (by @drager).
 
@@ -210,7 +165,7 @@ Display the current version of rust (by @drager).
 | ----------------------------- | ------------------ | -------- |
 | `GEOMETRY_RUST_VERSION_COLOR` | Color for version. | `red`    |
 
-## geometry_rustup.zsh
+### function `geometry_rustup`
 
 Display a symbol colored with the currently selected rustup toolchain.
 
@@ -222,7 +177,7 @@ Display a symbol colored with the currently selected rustup toolchain.
 | `GEOMETRY_RUSTUP_NIGHTLY_COLOR` | Nightly color.                                             | `red`    |
 | `GEOMETRY_RUSTUP_PIN`           | Can be setup to keep rustup rendering even out of context. |          |
 
-## geometry_status.zsh
+### function `geometry_status`
 
 Show a symbol with error/success and root/non-root information.
 
@@ -236,7 +191,7 @@ Show a symbol with error/success and root/non-root information.
 | `GEOMETRY_STATUS_COLOR_ERROR`       | Indicator color on error.                              | `red`    |
 | `GEOMETRY_STATUS_SYMBOL_COLOR_HASH` | Automatically pick a color based on the hostname hash. | `false`  |
 
-## geometry_virtualenv.zsh
+### function `geometry_virtualenv`
 
 Show the current `virtualenv` or `conda` environment.
 
