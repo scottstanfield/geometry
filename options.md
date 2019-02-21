@@ -5,23 +5,23 @@ list of all possible options that you can set that will override Geometry appear
 and functionality.
 
 # Table of Contents
-- [function `geometry_docker_machine`](#function-geometrydockermachine)
-- [function `geometry_exec_time`](#function-geometryexectime)
-- [function `geometry_git`](#function-geometrygit)
-- [function `geometry_hg`](#function-geometryhg)
-- [function `geometry_hostname`](#function-geometryhostname)
-- [function `geometry_jobs`](#function-geometryjobs)
-- [function `geometry_kube`](#function-geometrykube)
-- [function `geometry_node`](#function-geometrynode)
-- [function `geometry_npm_package_version`](#function-geometrynpmpackageversion)
-- [function `geometry_path`](#function-geometrypath)
-- [function `geometry_ruby`](#function-geometryruby)
-- [function `geometry_rust_version`](#function-geometryrustversion)
-- [function `geometry_rustup`](#function-geometryrustup)
-- [function `geometry_status`](#function-geometrystatus)
-- [function `geometry_virtualenv`](#function-geometryvirtualenv)
+- [Function `geometry_docker_machine`](#Function-geometrydockermachine)
+- [Function `geometry_exec_time`](#Function-geometryexectime)
+- [Function `geometry_git`](#Function-geometrygit)
+- [Function `geometry_hg`](#Function-geometryhg)
+- [Function `geometry_hostname`](#Function-geometryhostname)
+- [Function `geometry_jobs`](#Function-geometryjobs)
+- [Function `geometry_kube`](#Function-geometrykube)
+- [Function `geometry_node`](#Function-geometrynode)
+- [Function `geometry_npm_package_version`](#Function-geometrynpmpackageversion)
+- [Function `geometry_path`](#Function-geometrypath)
+- [Function `geometry_ruby`](#Function-geometryruby)
+- [Function `geometry_rust_version`](#Function-geometryrustversion)
+- [Function `geometry_rustup`](#Function-geometryrustup)
+- [Function `geometry_status`](#Function-geometrystatus)
+- [Function `geometry_virtualenv`](#Function-geometryvirtualenv)
 
-### function `geometry_docker_machine`
+### Function `geometry_docker_machine`
 
 Show the docker machine name.
 
@@ -30,7 +30,7 @@ Show the docker machine name.
 | `GEOMETRY_DOCKER_MACHINE_SYMBOL` | Indicator.                      | `⚓`      |
 | `GEOMETRY_DOCKER_MACHINE_COLOR`  | Text color of the machine name. | `blue`   |
 
-### function `geometry_exec_time`
+### Function `geometry_exec_time`
 
 Show the elapsed time for long running commands.
 
@@ -39,7 +39,7 @@ Show the elapsed time for long running commands.
 | `GEOMETRY_EXEC_TIME_FILE`     | Path to temp direcotry, where file is stored. |          |
 | `GEOMETRY_EXEC_TIME_PATIENCE` | Seconds before the time is shown.             |          |
 
-### function `geometry_git`
+### Function `geometry_git`
 
 Show git related information, such as branch name, status and time since last commit.
 
@@ -76,7 +76,7 @@ Show git related information, such as branch name, status and time since last co
 | **geometry::git_wrapper**                |                                             |                      |
 | `GEOMETRY_GIT_SEPARATOR`                 | Separator for the indicators.               | `::`                 |
 
-### function `geometry_hg`
+### Function `geometry_hg`
 
 Show Mercurial related information, such as branch name, status and time since last commit.
 
@@ -89,7 +89,7 @@ Show Mercurial related information, such as branch name, status and time since l
 | `GEOMETRY_HG_SYMBOL_CLEAN`     | Idicator for clean repository.  | `⬢`      |
 | `GEOMETRY_HG_SYMBOL_SEPARATOR` | Separator for the indicators.   | `::`     |
 
-### function `geometry_hostname`
+### Function `geometry_hostname`
 
 Shows user and hostname information, by default in the `enter` prompt.
 
@@ -98,7 +98,7 @@ Shows user and hostname information, by default in the `enter` prompt.
 | `GEOMETRY_HOSTNAME_HIDE_ON`   | Don't show the username and hostname indicator when the hostname matches. | `localhost` |
 | `GEOMETRY_HOSTNAME_SEPARATOR` | Separator between user and hostname.                                      | `@`         |
 
-### function `geometry_jobs`
+### Function `geometry_jobs`
 
 Shows background jobs, by default in the `enter` prompt.
 
@@ -107,7 +107,7 @@ Shows background jobs, by default in the `enter` prompt.
 | `GEOMETRY_JOBS_SYMBOL` | Indicator.               | `⚙`      |
 | `GEOMETRY_JOBS_COLOR`  | Color for the indicator. | `blue`   |
 
-### function `geometry_kube`
+### Function `geometry_kube`
 
 Show kubectl (Kubernetes) client version and current context/namespace.
 
@@ -117,7 +117,7 @@ Show kubectl (Kubernetes) client version and current context/namespace.
 | `GEOMETRY_KUBE_SYMBOL` | Indicator.                                 | `⎈`      |
 | `GEOMETRY_KUBE_PIN`    | Can be set to always show `geometry_kube`. |          |
 
-### function `geometry_node`
+### Function `geometry_node`
 
 Show node and npm/yarn version when in a node project context.
 
@@ -127,7 +127,7 @@ Show node and npm/yarn version when in a node project context.
 | `GEOMETRY_NODE_COLOR`  | Color for the indicator.                                                                     | `green`  |
 | `GEOMETRY_NODE_PIN`    | Can be setup to always show `geometry_node` outside of the context of a node project folder. |          |
 
-### function `geometry_npm_package_version`
+### Function `geometry_npm_package_version`
 
 Display the current folder's npm package version from package.json (by @drager)
 
@@ -137,7 +137,7 @@ Display the current folder's npm package version from package.json (by @drager)
 | `GEOMETRY_NPM_PACKAGE_VERSION_SYMBOL_COLOR` | Color for the indicator. | `red`    |
 | `GEOMETRY_NPM_PACKAGE_VERSION_COLOR`        | Text color.              | `red`    |
 
-### function `geometry_path`
+### Function `geometry_path`
 
 Show the current path.
 
@@ -147,7 +147,7 @@ Show the current path.
 | `GEOMETRY_PATH_SHOW_BASENAME` | -                                       | `false`  |
 | `GEOMETRY_PATH_COLOR`         | Color for path.                         | `blue`   |
 
-### function `geometry_ruby`
+### Function `geometry_ruby`
 
 Display the current ruby version, rvm version, and gemset.
 
@@ -157,7 +157,7 @@ Display the current ruby version, rvm version, and gemset.
 | `GEOMETRY_RUBY_COLOR`           | Indicator color. | `white`  |
 | `GEOMETRY_RUBY_RVM_SHOW_GEMSET` | Show RVM gemset. | `true`   |
 
-### function `geometry_rust_version`
+### Function `geometry_rust_version`
 
 Display the current version of rust (by @drager).
 
@@ -165,7 +165,7 @@ Display the current version of rust (by @drager).
 | ----------------------------- | ------------------ | -------- |
 | `GEOMETRY_RUST_VERSION_COLOR` | Color for version. | `red`    |
 
-### function `geometry_rustup`
+### Function `geometry_rustup`
 
 Display a symbol colored with the currently selected rustup toolchain.
 
@@ -177,7 +177,7 @@ Display a symbol colored with the currently selected rustup toolchain.
 | `GEOMETRY_RUSTUP_NIGHTLY_COLOR` | Nightly color.                                             | `red`    |
 | `GEOMETRY_RUSTUP_PIN`           | Can be setup to keep rustup rendering even out of context. |          |
 
-### function `geometry_status`
+### Function `geometry_status`
 
 Show a symbol with error/success and root/non-root information.
 
@@ -191,7 +191,7 @@ Show a symbol with error/success and root/non-root information.
 | `GEOMETRY_STATUS_COLOR_ERROR`       | Indicator color on error.                              | `red`    |
 | `GEOMETRY_STATUS_SYMBOL_COLOR_HASH` | Automatically pick a color based on the hostname hash. | `false`  |
 
-### function `geometry_virtualenv`
+### Function `geometry_virtualenv`
 
 Show the current `virtualenv` or `conda` environment.
 
