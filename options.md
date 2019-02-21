@@ -62,7 +62,7 @@ Show git related information, such as branch name, status and time since last co
 | `GEOMETRY_GIT_SYMBOL_CLEAN`              | Indicator when clean.                       | `⬢`                  |
 | **geometry_git_rebase()**                |                                             |                      |
 | `GEOMETRY_GIT_SYMBOL_REBASE`             | Indicator.                                  | `®`                  |
-| **geometry_git_remote() **               |                                             |                      |
+| **geometry_git_remote()**                |                                             |                      |
 | `GEOMETRY_GIT_SYMBOL_UNPUSHED`           | Unpushed indicator.                         | `⇡`                  |
 | `GEOMETRY_GIT_SYMBOL_UNPULLED`           | Unpulled indicator.                         | `⇣`                  |
 | **geometry_git_conflicts()**             |                                             |                      |
