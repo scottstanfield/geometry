@@ -7,9 +7,9 @@
 GEOMETRY_ROOT=${0:A:h}
 : ${GEOMETRY_SEPARATOR:=" "}
 
-(($+GEOMETRY_PROMPT)) || GEOMETRY_PROMPT=(geometry_echo geometry_status geometry_path)
-(($+GEOMETRY_RPROMPT)) || GEOMETRY_RPROMPT=(geometry_exec_time geometry_git geometry_hg geometry_echo)
-(($+GEOMETRY_INFO)) || GEOMETRY_INFO=(geometry_hostname geometry_jobs)
+(($+GEOMETRY_PROMPT))  || GEOMETRY_PROMPT=(geometry_status geometry_path)
+(($+GEOMETRY_RPROMPT)) || GEOMETRY_RPROMPT=(geometry_node geometry_error geometry_exec_time geometry_git geometry_echo)
+(($+GEOMETRY_INFO))    || GEOMETRY_INFO=(geometry_hostname geometry_jobs)
 
 autoload -U add-zsh-hook
 
@@ -41,13 +41,13 @@ geometry::time() {
   $detailed && ansi $color ${(j: :)human} || ansi $color $human[0,1]
 }
 
-# set title to COMMAND @ CURRENT_DIRECTORY
-geometry::set_title() { print -Pn "\e]0;${2} @ ${PWD##*/}\a"; }
-add-zsh-hook preexec geometry::set_title
+# # set title to COMMAND @ CURRENT_DIRECTORY
+# geometry::set_title() { print -Pn "\e]0;${2} @ ${PWD##*/}\a"; }
+# add-zsh-hook preexec geometry::set_title
 
-# clear title after command ends
-geometry::clear_title() { print -Pn '\e]0;%~\a'; }
-add-zsh-hook precmd geometry::clear_title
+# # clear title after command ends
+# geometry::clear_title() { print -Pn '\e]0;%~\a'; }
+# add-zsh-hook precmd geometry::clear_title
 
 # join outputs of functions - pwd first
 geometry::wrap() {
@@ -79,11 +79,11 @@ geometry::prompt() {
 
 add-zsh-hook precmd geometry::prompt
 
-geometry::info() { # draw info if no command is given
-    [[ -n "$BUFFER" ]] && { zle accept-line && return; }
-    info="$(geometry::wrap $PWD $GEOMETRY_INFO)"
-    echo "${(%)info}" && geometry::prompt
-}
-zle -N buffer-empty geometry::info
-bindkey '^M' buffer-empty
-ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=buffer-empty
+# geometry::info() { # draw info if no command is given
+#     [[ -n "$BUFFER" ]] && { zle accept-line && return; }
+#     info="$(geometry::wrap $PWD $GEOMETRY_INFO)"
+#     echo "${(%)info}" && geometry::prompt
+# }
+# zle -N buffer-empty geometry::info
+# bindkey '^M' buffer-empty
+# ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=buffer-empty
