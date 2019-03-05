@@ -8,7 +8,7 @@ GEOMETRY_ROOT=${0:A:h}
 : ${GEOMETRY_SEPARATOR:=" "}
 
 (($+GEOMETRY_PROMPT))  || GEOMETRY_PROMPT=(geometry_status geometry_path)
-(($+GEOMETRY_RPROMPT)) || GEOMETRY_RPROMPT=(geometry_node geometry_error geometry_exec_time geometry_git geometry_echo)
+(($+GEOMETRY_RPROMPT)) || GEOMETRY_RPROMPT=(geometry_exec_time geometry_git geometry_node geometry_exitcode geometry_echo )
 (($+GEOMETRY_INFO))    || GEOMETRY_INFO=(geometry_hostname geometry_jobs)
 
 autoload -U add-zsh-hook
